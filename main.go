@@ -22,6 +22,11 @@ func getStatusColor(status string) string {
 		return "[green]"
 	case "selected for development":
 		return "[purple]"
+	case "in testing":
+		return "[yellow]"
+	case "ready for test":
+		return "[yellow]"
+
 	default:
 		return "[white]"
 	}
@@ -350,7 +355,8 @@ func setupMainApp(app *tview.Application, email, apiToken string, initialJQL str
 		}
 
 		for _, issue := range displayedIssues {
-			mainText := fmt.Sprintf("%s: %s", issue.Key, issue.Fields.Summary)
+			statusColor := getStatusColor(issue.Fields.Status.Name)
+			mainText := fmt.Sprintf("%s%s: %s", statusColor, issue.Key, issue.Fields.Summary)
 			list.AddItem(mainText, "", 0, nil)
 		}
 		if len(displayedIssues) > 0 {

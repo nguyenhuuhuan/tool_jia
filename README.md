@@ -8,6 +8,16 @@ This is a simple CLI tool for interacting with Jira.
 *   Open tickets in your browser.
 *   Generate branch names from ticket information.
 
+## Screenshots
+
+**List all tickets:**
+
+![List all tickets](assets/1.png)
+
+**Actions in a ticket:**
+
+![Actions in a ticket](assets/2.png)
+
 ## Installation
 
 1.  **Clone the repository:**

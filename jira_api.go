@@ -241,17 +241,6 @@ func FetchJiraSprints(apiToken string, boardID int) ([]Sprint, error) {
 	return sprintResponse.Values, nil
 }
 
-/* <<<<<<<<<<<<<<  ✨ Windsurf Command ⭐ >>>>>>>>>>>>>>>> */
-// FetchJiraIssues fetches issues from Jira matching the given JQL query, and returns them in a slice of Issue objects.
-//
-// The function takes in the email address associated with the Jira account, the API token for that account, and the JQL query to use for the search.
-//
-// The function first constructs the URL for the Jira API call by appending the JQL query to the base Jira URL, and then makes the request using the provided API token.
-//
-// If the request is successful, the function reads the response body into a byte slice and unmarshals the JSON into a JiraSearchResponse struct.
-//
-// If unmarshalling is successful, the function returns the slice of Issues from the JiraSearchResponse struct. If either the request or the unmarshalling fails, the function returns an error.
-/* <<<<<<<<<<  22c8d570-0811-4420-838e-2264f3f593a4  >>>>>>>>>>> */
 func FetchJiraIssues(email, apiToken string, jql string) ([]Issue, error) {
 	client := &http.Client{Timeout: 20 * time.Second}
 	jiraURL, err := url.Parse(fmt.Sprintf("%s%s", jiraBaseURL, jiraAPIPath))
