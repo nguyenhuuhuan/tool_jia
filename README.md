@@ -10,19 +10,42 @@ This is a simple CLI tool for interacting with Jira.
 
 ## Installation
 
-1.  Clone the repository.
-2.  Install the dependencies:
+1.  **Clone the repository:**
 
     ```bash
-    go mod tidy
+    git clone https://github.com/your-username/jira-cli.git
+    cd jira-cli
     ```
 
-3.  Set the `JIRA_API_TOKEN` environment variable to your Jira API token.
+2.  **Set up environment variables:**
+
+    Create a `.env` file in the root of the project and add the following:
+
+    ```
+    JIRA_API_TOKEN=your-jira-api-token
+    JIRA_EMAIL=your-jira-email
+    ```
+
+    You can also set these as system-wide environment variables.
+
+3.  **Build the binary:**
+
+    ```bash
+    go build -o jira
+    ```
+
+4.  **Move the binary to your system's `bin` directory:**
+
+    ```bash
+    mv jira /usr/local/bin/
+    ```
 
 ## Usage
 
+Once the binary is in your system's `bin` directory, you can run the tool from anywhere:
+
 ```bash
-go run .
+jira
 ```
 
 ## Dependencies
